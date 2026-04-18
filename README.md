@@ -4,7 +4,7 @@ A modular poker game engine supporting multiple variants, real-time gameplay, an
 一个支持多玩法、实时交互与模拟系统的扑克游戏引擎。  
 一個支援多玩法、即時互動與模擬系統的撲克遊戲引擎。
 
----
+Play poker in Telegram: Inline mode, groups, private rooms, tournaments, chips / Telegram内玩德州扑克：内联模式、群组、私房、锦标赛、筹码 / Telegram內玩德州撲克：內聯模式、群組、私房、錦標賽、籌碼.
 
 ## 🎮 Supported Games | 支持玩法 | 支援玩法
 
@@ -95,3 +95,32 @@ No real-money or gambling features
 <img width="1002" height="1204" alt="QQ_1768804139439" src="https://github.com/user-attachments/assets/a26f7354-4aae-4925-bdf7-2a2cf12f2ddc" />
 <img width="943" height="1171" alt="QQ_1768804105632" src="https://github.com/user-attachments/assets/c69c8986-59e6-48d8-82d9-a6a913fe6e64" />
 <img width="1088" height="1187" alt="QQ_1768803800440" src="https://github.com/user-attachments/assets/f84dcb26-3299-485a-abd8-dd30e8d07835" />
+
+
+## 📦 版本发布 / Releases / 版本發佈
+
+### 🚀 v1.0.0 (生产可用)
+✅ Inline+群组双模式  
+✅ 完整德州扑克规则  
+✅ 筹码战绩系统  
+✅ 一键Vercel部署  
+✅ 多语言支持  
+
+联系：📱 Telegram：@fox_lovemyself
+
+## ❓ FAQ / 常见问题 / 常見問題
+
+**Q: Bot Token怎么获取？**  
+**A:** @BotFather → /newbot → 复制Token
+
+**Q: 支持群组吗？**  
+**A:** 完美支持，9人桌群内对战
+
+**Q: 防作弊吗？**  
+**A:** 服务端权威判断，客户端仅显示
+
+**Q: 可以商用吗？**  
+**A:** MIT License，完全商用授权
+
+## 🤝 贡献指南 / Contributing / 貢獻指南
+
