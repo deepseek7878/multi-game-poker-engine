@@ -1,4 +1,4 @@
-# Multi-Game Poker Engine Suite | 德州源码|德州俱乐部|德州金币大厅|多玩法扑克引擎系统 | 多玩法撲克引擎系統| Telegram上的德州| H5德州
+# Multi-Game Poker Engine Suite | 德州源码|德州俱乐部|德州金币大厅|多玩法扑克引擎系统 | 多玩法撲克引擎系統| Telegram上的德州| H5德州|德州扑克源码
 
 A modular poker game engine supporting multiple variants, real-time gameplay, and simulation systems.  
 一个支持多玩法、实时交互与模拟系统的扑克游戏引擎。  
