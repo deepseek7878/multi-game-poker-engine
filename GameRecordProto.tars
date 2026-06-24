@@ -1,0 +1,221 @@
+
+/**
+**游戏记录系统协议
+* 
+**/
+module gamerecord
+{
+    //经典场用户行为信息上报请求
+    struct ReportQSUserActInfoReq
+    {
+        0 optional long uid;         //用户ID
+        1 optional int hdCardCount;  //手牌数
+        2 optional int poolCount;    //投入奖池的次数
+        3 optional int winCount;     //胜数
+        4 optional int showCount;    //展示手牌的次数
+        5 optional int cardType;     //最佳牌型
+        6 optional vector<byte> cards;     //牌面
+        7 optional int callCount;       //跟注数
+        8 optional int raiseCount;     //加注数
+        9 optional int betCount;       //下注数
+        10 optional int intoPoolWinCount;
+        11 optional int intoPoolCount;
+        12 optional long winNum;    //输赢筹码
+        13 optional long pumpNum;   //抽水数
+    };
+
+    //经典场用户行为信息上报应答
+    struct ReportQSUserActInfoRsp
+    {
+        0 optional int resultCode;	//结果码
+    };
+
+    //比赛场用户行为信息上报请求
+    struct ReportKOUserActInfoReq
+    {
+        0 optional long uid;        //用户ID
+        1 optional int matchCount;  //参赛次数
+        2 optional int winCount;    //获奖次数
+        3 optional int rank;        //最好成绩
+        4 optional int type;        //房间类型
+    };
+
+    //比赛场用户行为信息上报应答
+    struct ReportKOUserActInfoRsp
+    {
+        0 optional int resultCode;	//结果码
+    };
+
+    //经典场用户行为信息请求
+    struct QSUserActInfoReq
+    {
+        0 optional long uid;  //用户ID
+    };
+
+    //经典场用户行为信息应答
+    struct QSUserActInfoResp
+    {
+        0 optional int hdCardCount; //手牌数
+        1 optional int poolCount;   //投入奖池的次数
+        2 optional int winCount;    //胜数
+        3 optional int showCount;   //展示手牌的场数
+        4 optional int cardType;     //最佳牌型
+        5 optional vector<byte> cards;     //牌面
+        6 optional int callCount;
+        7 optional int raiseCount;
+        8 optional int betCount;
+        9 optional int intoPoolWinCount;
+        10 optional int intoPoolCount;
+    };
+
+    //修改经典场用户行为信息
+    struct UpdateQSUserActInfoReq
+    {
+        0 optional long uid;        //用户ID
+        1 optional int hdCardCount; //手牌数
+        2 optional int poolCount;   //投入奖池的次数
+        3 optional int winCount;    //胜数
+        4 optional int showCount;   //展示手牌的场数
+        5 optional int cardType;     //最佳牌型
+        6 optional vector<byte> cards;     //牌面
+    };
+
+    //比赛场用户行为信息请求
+    struct KOUserActInfoReq
+    {
+        0 optional long uid;  //用户ID
+    };
+
+    //比赛场用户行为信息应答
+    struct KOUserActInfoResp
+    {
+        0 optional int matchCount;  //参赛次数
+        1 optional int winCount;    //获奖次数
+        2 optional int rank;        //最好成绩
+    };
+
+    //修改比赛场用户行为信息
+    struct UpdateKOUserActInfoReq
+    {
+        0 optional long uid;        //用户ID
+        1 optional int matchCount;  //参赛次数
+        2 optional int winCount;    //获奖次数
+        3 optional int rank;        //最好成绩
+        4 optional int type;
+    };
+
+    struct UserStat
+    {
+        0 optional long lUid;
+        1 optional string sNickName;
+        2 optional long iBuyInCount;
+        3 optional long lBuyInNum;
+        4 optional long lWinNum;
+        5 optional long lFree;
+    };
+
+    struct RoomCalStatReq
+    {
+        0 optional string sRoomID;
+        1 optional string  sRoomKey;
+        2 optional int iStatus;
+        3 optional int  iBlindLevel;
+        4 optional long  lGameTime;
+        5 optional long lEndTime;
+        6 optional map<long, UserStat> info;
+        7 optional long lCreaterID;
+        8 optional int seatCount;
+        9 optional int iPet;
+    };
+
+    //AI场用户行为信息请求
+    struct AIUserActInfoReq
+    {
+        0 optional long uid;      //用户ID
+        1 optional int  level;    //盲注等级
+    };
+
+    //AI场用户行为信息应答
+    struct AIUserActInfoResp
+    {
+        0 optional int hdCardCount;        //手牌数
+        1 optional int poolCount;          //投入奖池的次数
+        2 optional int winCount;           //胜数
+        3 optional long blindlevel;        //盲注等级
+        4 optional long coinchange;        //盈亏数
+        5 optional int cardType;           //最佳牌型
+        6 optional vector<byte> cards;     //牌面
+    };
+
+    //AI场用户行为信息上报请求
+    struct ReportAIUserActInfoReq
+    {
+        0 optional long uid;               //用户ID
+        1 optional int hdCardCount;        //手牌数
+        2 optional int winCount;           //胜数
+        3 optional long blindlevel;        //盲注等级
+        4 optional long coinchange;        //盈亏数
+        5 optional int cardType;           //最佳牌型
+        6 optional vector<byte> cards;     //牌面
+    };
+
+    //AI场用户行为信息上报应答
+    struct ReportAIUserActInfoRsp
+    {
+        0 optional int resultCode;  //结果码
+    };
+
+    //AI场用户基础信息
+    struct AIUserBaseInfoItem
+    {
+        0 optional int uid;                //用户id
+        1 optional long coinchange;        //盈利
+        2 optional string date;            //日期
+        3 optional int level;              //等级
+        4 optional int handcount;          //手数
+        5 optional int wincount;           //获胜手数
+    };
+
+    //AI场用户基础信息应答
+    struct AIUserBaseInfoResp
+    {
+        0 optional map<int, map<string, AIUserBaseInfoItem>> data;
+    };
+
+    //AI场用户key信息
+    struct AIUserKeyInfoRsp
+    {
+        0 optional long   uid;        //用户id
+        1 optional string actkey;     //actkeyname
+        2 optional string basekey;    //basekeyname
+        3 optional string cardkey;    //cardkeyname
+    };
+
+    //AI场用户牌信息上报请求
+    struct ReportAIUserCardInfoReq
+    {
+        0 optional long uid;               //用户id
+        1 optional vector<short> cards;    //牌面
+        2 optional int win;                //是否赢牌 0-输 1-赢
+        3 optional long coinchange;        //盈亏
+    };
+
+    //AI场用户牌信息上报应答
+    struct ReportAIUserCardInfoRsp
+    {
+        0 optional int resultCode;  //结果码
+    };
+
+    //AI场用户牌数据信息
+    struct AIUserCardInfo
+    {
+        0 optional long uid;              //用户id
+        1 optional string cardvalue;      //牌值
+        2 optional int ocardcount;        //非同花总手数
+        3 optional int owincount;         //非同花获胜手数
+        4 optional long ocoinchange;      //非同花盈亏
+        5 optional int scardcount;        //同花总手数
+        6 optional int swincount;         //同花获胜手数
+        7 optional long scoinchange;      //同花盈亏
+    };
+};
